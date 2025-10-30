@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EduTech Digital - Platform Pembelajaran Modern</title>
+    <title>Smart Digi Kids</title>
     <style>
       * {
         margin: 0;
@@ -20,7 +20,14 @@
 
       /* Header & Navigation */
       header {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: linear-gradient(
+          135deg,
+          #ff6b6b 0%,
+          #ffd93d 25%,
+          #6bcf7f 50%,
+          #4d96ff 75%,
+          #a78bfa 100%
+        );
         color: white;
         padding: 1rem 0;
         position: fixed;
@@ -74,10 +81,41 @@
 
       /* Hero Section */
       .hero {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: linear-gradient(
+            135deg,
+            rgba(255, 107, 107, 0.95) 0%,
+            rgba(255, 217, 61, 0.95) 25%,
+            rgba(107, 207, 127, 0.95) 50%,
+            rgba(77, 150, 255, 0.95) 75%,
+            rgba(167, 139, 250, 0.95) 100%
+          ),
+          url("https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1200&q=80")
+            center/cover;
         color: white;
         padding: 150px 2rem 100px;
         text-align: center;
+        position: relative;
+      }
+
+      .hero::before {
+        content: "🎨 🚀 ⭐ 🎮 🎯 🌈 🎪 🎭 ✨ 🎨";
+        position: absolute;
+        top: 20px;
+        left: 0;
+        right: 0;
+        font-size: 2rem;
+        opacity: 0.3;
+        animation: float 3s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
       }
 
       .hero h1 {
@@ -95,7 +133,7 @@
 
       .cta-button {
         background: white;
-        color: #667eea;
+        color: #ff6b6b;
         padding: 1rem 2.5rem;
         border: none;
         border-radius: 50px;
@@ -104,6 +142,7 @@
         cursor: pointer;
         transition: transform 0.3s, box-shadow 0.3s;
         animation: fadeInUp 1s ease 0.4s backwards;
+        box-shadow: 0 5px 20px rgba(255, 107, 107, 0.3);
       }
 
       .cta-button:hover {
@@ -131,14 +170,41 @@
         display: block;
         width: 80px;
         height: 4px;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: linear-gradient(
+          135deg,
+          #ff6b6b 0%,
+          #ffd93d 25%,
+          #6bcf7f 50%,
+          #4d96ff 75%,
+          #a78bfa 100%
+        );
         margin: 1rem auto;
         border-radius: 2px;
       }
 
       /* Vision Mission */
       .vision-mission {
-        background: #f8f9fa;
+        background: linear-gradient(
+            135deg,
+            rgba(255, 245, 245, 0.9) 0%,
+            rgba(255, 251, 234, 0.9) 25%,
+            rgba(240, 253, 244, 0.9) 50%,
+            rgba(239, 246, 255, 0.9) 75%,
+            rgba(250, 245, 255, 0.9) 100%
+          ),
+          url("file:///Users/user/Downloads/bocil-belajar.jpg") center/cover
+            fixed;
+        position: relative;
+      }
+
+      .vision-mission::before {
+        content: "📚 ✏️ 🎓 📖 🖍️ 🎨 ✂️ 📐";
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 2rem;
+        opacity: 0.2;
       }
 
       .vm-container {
@@ -154,17 +220,20 @@
         border-radius: 15px;
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
         transition: transform 0.3s, box-shadow 0.3s;
+        border: 3px solid transparent;
+        background-clip: padding-box;
       }
 
       .vm-card:hover {
         transform: translateY(-10px);
         box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        border-color: #ff6b6b;
       }
 
       .vm-card h3 {
         font-size: 1.8rem;
         margin-bottom: 1rem;
-        color: #667eea;
+        color: #ff6b6b;
       }
 
       .vm-card p {
@@ -177,6 +246,27 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 2rem;
+      }
+
+      #videos {
+        background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.95) 0%,
+            rgba(255, 255, 255, 0.95) 100%
+          ),
+          url("https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=1200&q=80")
+            center/cover fixed;
+        position: relative;
+      }
+
+      #videos::before {
+        content: "🎬 📹 🎥 📺 🎞️ 🎪 🎭 🎨";
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 2rem;
+        opacity: 0.15;
       }
 
       .video-card {
@@ -194,7 +284,14 @@
       .video-thumbnail {
         position: relative;
         padding-bottom: 56.25%;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: linear-gradient(
+          135deg,
+          #ff6b6b 0%,
+          #ffd93d 25%,
+          #6bcf7f 50%,
+          #4d96ff 75%,
+          #a78bfa 100%
+        );
         overflow: hidden;
       }
 
@@ -222,7 +319,7 @@
         content: "";
         width: 0;
         height: 0;
-        border-left: 20px solid #667eea;
+        border-left: 20px solid #ff6b6b;
         border-top: 12px solid transparent;
         border-bottom: 12px solid transparent;
         margin-left: 5px;
@@ -244,7 +341,27 @@
 
       /* Modules Section */
       .modules {
-        background: #f8f9fa;
+        background: linear-gradient(
+            135deg,
+            rgba(255, 245, 245, 0.9) 0%,
+            rgba(255, 251, 234, 0.9) 25%,
+            rgba(240, 253, 244, 0.9) 50%,
+            rgba(239, 246, 255, 0.9) 75%,
+            rgba(250, 245, 255, 0.9) 100%
+          ),
+          url("https://images.unsplash.com/photo-1596496181848-3091d4878b24?w=1200&q=80")
+            center/cover fixed;
+        position: relative;
+      }
+
+      .modules::before {
+        content: "💻 🖥️ 📱 ⌨️ 🖱️ 🎮 🕹️ 🤖";
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 2rem;
+        opacity: 0.2;
       }
 
       .module-grid {
@@ -270,7 +387,12 @@
       .module-icon {
         width: 60px;
         height: 60px;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: linear-gradient(
+          135deg,
+          #ff6b6b 0%,
+          #ffd93d 50%,
+          #6bcf7f 100%
+        );
         border-radius: 12px;
         display: flex;
         align-items: center;
@@ -291,8 +413,13 @@
 
       .module-badge {
         display: inline-block;
-        background: #e7eaff;
-        color: #667eea;
+        background: linear-gradient(
+          135deg,
+          #ffe5e5 0%,
+          #fff9cc 50%,
+          #e0ffe0 100%
+        );
+        color: #ff6b6b;
         padding: 0.3rem 1rem;
         border-radius: 20px;
         font-size: 0.85rem;
@@ -301,7 +428,14 @@
 
       /* Footer */
       footer {
-        background: #2d3748;
+        background: linear-gradient(
+          135deg,
+          #ff6b6b 0%,
+          #ffd93d 25%,
+          #6bcf7f 50%,
+          #4d96ff 75%,
+          #a78bfa 100%
+        );
         color: white;
         text-align: center;
         padding: 2rem;
@@ -326,7 +460,14 @@
           left: -100%;
           top: 70px;
           flex-direction: column;
-          background: #667eea;
+          background: linear-gradient(
+            135deg,
+            #ff6b6b 0%,
+            #ffd93d 25%,
+            #6bcf7f 50%,
+            #4d96ff 75%,
+            #a78bfa 100%
+          );
           width: 100%;
           text-align: center;
           transition: left 0.3s;
@@ -367,11 +508,12 @@
       <nav>
         <a href="#" class="logo">🚀 EduTech</a>
         <ul class="nav-links" id="navLinks">
-          <li><a href="#home">Beranda</a></li>
-          <li><a href="#vision">Visi & Misi</a></li>
-          <li><a href="#videos">Video Edukasi</a></li>
-          <li><a href="#modules">Modul</a></li>
-          <li><a href="#contact">Kontak</a></li>
+          <li><a href="#home">🏠 Beranda</a></li>
+          <li><a href="#home">👥 Our Team</a></li>
+          <li><a href="#vision">🎯 Visi & Misi</a></li>
+          <li><a href="#videos">🎬 Video Edukasi</a></li>
+          <li><a href="#modules">📚 Modul</a></li>
+          <li><a href="#contact">📞 Kontak</a></li>
         </ul>
         <button class="menu-toggle" id="menuToggle">☰</button>
       </nav>
@@ -510,45 +652,6 @@
             kehidupan nyata
           </p>
           <span class="module-badge">20 Pelajaran</span>
-        </div>
-        <div class="module-card">
-          <div class="module-icon">📊</div>
-          <h3>Data Analytics</h3>
-          <p>
-            Analisis data menggunakan Python, SQL, dan tools visualisasi modern
-          </p>
-          <span class="module-badge">18 Pelajaran</span>
-        </div>
-        <div class="module-card">
-          <div class="module-icon">🎨</div>
-          <h3>UI/UX Design</h3>
-          <p>Desain interface yang menarik dan user experience yang optimal</p>
-          <span class="module-badge">10 Pelajaran</span>
-        </div>
-        <div class="module-card">
-          <div class="module-icon">🔒</div>
-          <h3>Cyber Security</h3>
-          <p>
-            Pelajari keamanan sistem, ethical hacking, dan best practices
-            security
-          </p>
-          <span class="module-badge">14 Pelajaran</span>
-        </div>
-        <div class="module-card">
-          <div class="module-icon">☁️</div>
-          <h3>Cloud Computing</h3>
-          <p>
-            Infrastruktur cloud dengan AWS, Azure, dan Google Cloud Platform
-          </p>
-          <span class="module-badge">16 Pelajaran</span>
-        </div>
-        <div class="module-card">
-          <div class="module-icon">📈</div>
-          <h3>Digital Marketing</h3>
-          <p>
-            SEO, SEM, social media marketing, dan strategi marketing digital
-          </p>
-          <span class="module-badge">11 Pelajaran</span>
         </div>
       </div>
     </section>
