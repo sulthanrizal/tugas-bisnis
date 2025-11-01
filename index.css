@@ -253,6 +253,9 @@ section {
   padding: 100px 0;
   position: relative;
 }
+a {
+  color: white;
+}
 
 .section-header {
   display: flex;
@@ -457,16 +460,16 @@ section {
 
 /* Video Section */
 .videos {
-  background: linear-gradient(180deg, #ffe5ec 0%, #fff4e6 100%);
+  background: #122e57;
 }
 
 .video-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 3rem;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 3rem;
+  padding: 0 10rem;
 }
 
 .video-card {
