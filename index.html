@@ -3,515 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Smart Digi Kids</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        line-height: 1.6;
-        color: #333;
-        overflow-x: hidden;
-      }
-
-      /* Header & Navigation */
-      header {
-        background: linear-gradient(
-          135deg,
-          #ff6b6b 0%,
-          #ffd93d 25%,
-          #6bcf7f 50%,
-          #4d96ff 75%,
-          #a78bfa 100%
-        );
-        color: white;
-        padding: 1rem 0;
-        position: fixed;
-        width: 100%;
-        top: 0;
-        z-index: 1000;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      }
-
-      nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 2rem;
-      }
-
-      .logo {
-        font-size: 1.8rem;
-        font-weight: bold;
-        text-decoration: none;
-        color: white;
-      }
-
-      .nav-links {
-        display: flex;
-        list-style: none;
-        gap: 2rem;
-      }
-
-      .nav-links a {
-        color: white;
-        text-decoration: none;
-        transition: opacity 0.3s;
-        font-weight: 500;
-      }
-
-      .nav-links a:hover {
-        opacity: 0.8;
-      }
-
-      .menu-toggle {
-        display: none;
-        background: none;
-        border: none;
-        color: white;
-        font-size: 1.5rem;
-        cursor: pointer;
-      }
-
-      /* Hero Section */
-      .hero {
-        background: linear-gradient(
-            135deg,
-            rgba(255, 107, 107, 0.95) 0%,
-            rgba(255, 217, 61, 0.95) 25%,
-            rgba(107, 207, 127, 0.95) 50%,
-            rgba(77, 150, 255, 0.95) 75%,
-            rgba(167, 139, 250, 0.95) 100%
-          ),
-          url("https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1200&q=80")
-            center/cover;
-        color: white;
-        padding: 150px 2rem 100px;
-        text-align: center;
-        position: relative;
-      }
-
-      .hero::before {
-        content: "🎨 🚀 ⭐ 🎮 🎯 🌈 🎪 🎭 ✨ 🎨";
-        position: absolute;
-        top: 20px;
-        left: 0;
-        right: 0;
-        font-size: 2rem;
-        opacity: 0.3;
-        animation: float 3s ease-in-out infinite;
-      }
-
-      @keyframes float {
-        0%,
-        100% {
-          transform: translateY(0px);
-        }
-        50% {
-          transform: translateY(-10px);
-        }
-      }
-
-      .hero h1 {
-        font-size: 3rem;
-        margin-bottom: 1rem;
-        animation: fadeInUp 1s ease;
-      }
-
-      .hero p {
-        font-size: 1.3rem;
-        margin-bottom: 2rem;
-        opacity: 0.9;
-        animation: fadeInUp 1s ease 0.2s backwards;
-      }
-
-      .cta-button {
-        background: white;
-        color: #ff6b6b;
-        padding: 1rem 2.5rem;
-        border: none;
-        border-radius: 50px;
-        font-size: 1.1rem;
-        font-weight: bold;
-        cursor: pointer;
-        transition: transform 0.3s, box-shadow 0.3s;
-        animation: fadeInUp 1s ease 0.4s backwards;
-        box-shadow: 0 5px 20px rgba(255, 107, 107, 0.3);
-      }
-
-      .cta-button:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-      }
-
-      /* Section Styles */
-      section {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 80px 2rem;
-      }
-
-      h2 {
-        font-size: 2.5rem;
-        text-align: center;
-        margin-bottom: 3rem;
-        color: #333;
-        position: relative;
-      }
-
-      h2::after {
-        content: "";
-        display: block;
-        width: 80px;
-        height: 4px;
-        background: linear-gradient(
-          135deg,
-          #ff6b6b 0%,
-          #ffd93d 25%,
-          #6bcf7f 50%,
-          #4d96ff 75%,
-          #a78bfa 100%
-        );
-        margin: 1rem auto;
-        border-radius: 2px;
-      }
-
-      /* Vision Mission */
-      .vision-mission {
-        background: linear-gradient(
-            135deg,
-            rgba(255, 245, 245, 0.9) 0%,
-            rgba(255, 251, 234, 0.9) 25%,
-            rgba(240, 253, 244, 0.9) 50%,
-            rgba(239, 246, 255, 0.9) 75%,
-            rgba(250, 245, 255, 0.9) 100%
-          ),
-          url("./bocil-belajar.jpg") center/cover fixed;
-        position: relative;
-      }
-
-      .vision-mission::before {
-        content: "📚 ✏️ 🎓 📖 🖍️ 🎨 ✂️ 📐";
-        position: absolute;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 2rem;
-        opacity: 0.2;
-      }
-
-      .vm-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 3rem;
-        margin-top: 2rem;
-      }
-
-      .vm-card {
-        background: white;
-        padding: 2.5rem;
-        border-radius: 15px;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-        transition: transform 0.3s, box-shadow 0.3s;
-        border: 3px solid transparent;
-        background-clip: padding-box;
-      }
-
-      .vm-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-        border-color: #ff6b6b;
-      }
-
-      .vm-card h3 {
-        font-size: 1.8rem;
-        margin-bottom: 1rem;
-        color: #ff6b6b;
-      }
-
-      .vm-card p {
-        color: #666;
-        line-height: 1.8;
-      }
-
-      /* Video Section */
-      .video-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-      }
-
-      #videos {
-        background: linear-gradient(
-            135deg,
-            rgba(255, 255, 255, 0.95) 0%,
-            rgba(255, 255, 255, 0.95) 100%
-          ),
-          url("https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=1200&q=80")
-            center/cover fixed;
-        position: relative;
-      }
-
-      #videos::before {
-        content: "🎬 📹 🎥 📺 🎞️ 🎪 🎭 🎨";
-        position: absolute;
-        top: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 2rem;
-        opacity: 0.15;
-      }
-
-      .video-card {
-        background: white;
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-        transition: transform 0.3s;
-      }
-
-      .video-card:hover {
-        transform: translateY(-5px);
-      }
-
-      .video-thumbnail {
-        position: relative;
-        padding-bottom: 56.25%;
-        background: linear-gradient(
-          135deg,
-          #ff6b6b 0%,
-          #ffd93d 25%,
-          #6bcf7f 50%,
-          #4d96ff 75%,
-          #a78bfa 100%
-        );
-        overflow: hidden;
-      }
-
-      .play-button {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 60px;
-        height: 60px;
-        background: rgba(255, 255, 255, 0.9);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: background 0.3s;
-      }
-
-      .play-button:hover {
-        background: white;
-      }
-
-      .play-button::after {
-        content: "";
-        width: 0;
-        height: 0;
-        border-left: 20px solid #ff6b6b;
-        border-top: 12px solid transparent;
-        border-bottom: 12px solid transparent;
-        margin-left: 5px;
-      }
-
-      .video-info {
-        padding: 1.5rem;
-      }
-
-      .video-info h3 {
-        margin-bottom: 0.5rem;
-        color: #333;
-      }
-
-      .video-info p {
-        color: #666;
-        font-size: 0.9rem;
-      }
-
-      /* Modules Section */
-      .modules {
-        background: linear-gradient(
-            135deg,
-            rgba(255, 245, 245, 0.9) 0%,
-            rgba(255, 251, 234, 0.9) 25%,
-            rgba(240, 253, 244, 0.9) 50%,
-            rgba(239, 246, 255, 0.9) 75%,
-            rgba(250, 245, 255, 0.9) 100%
-          ),
-          url("https://images.unsplash.com/photo-1596496181848-3091d4878b24?w=1200&q=80")
-            center/cover fixed;
-        position: relative;
-      }
-
-      .modules::before {
-        content: "💻 🖥️ 📱 ⌨️ 🖱️ 🎮 🕹️ 🤖";
-        position: absolute;
-        top: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 2rem;
-        opacity: 0.2;
-      }
-
-      .module-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 2rem;
-      }
-
-      .module-card {
-        background: white;
-        padding: 2rem;
-        border-radius: 15px;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-        transition: transform 0.3s, box-shadow 0.3s;
-        cursor: pointer;
-      }
-
-      .module-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-      }
-
-      .module-icon {
-        width: 60px;
-        height: 60px;
-        background: linear-gradient(
-          135deg,
-          #ff6b6b 0%,
-          #ffd93d 50%,
-          #6bcf7f 100%
-        );
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 1.5rem;
-        font-size: 1.8rem;
-      }
-
-      .module-card h3 {
-        margin-bottom: 1rem;
-        color: #333;
-      }
-
-      .module-card p {
-        color: #666;
-        margin-bottom: 1rem;
-      }
-
-      .module-badge {
-        display: inline-block;
-        background: linear-gradient(
-          135deg,
-          #ffe5e5 0%,
-          #fff9cc 50%,
-          #e0ffe0 100%
-        );
-        color: #ff6b6b;
-        padding: 0.3rem 1rem;
-        border-radius: 20px;
-        font-size: 0.85rem;
-        font-weight: 600;
-      }
-
-      /* Footer */
-      footer {
-        background: linear-gradient(
-          135deg,
-          #ff6b6b 0%,
-          #ffd93d 25%,
-          #6bcf7f 50%,
-          #4d96ff 75%,
-          #a78bfa 100%
-        );
-        color: white;
-        text-align: center;
-        padding: 2rem;
-      }
-
-      /* Animations */
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      /* Responsive */
-      @media (max-width: 768px) {
-        .nav-links {
-          position: fixed;
-          left: -100%;
-          top: 70px;
-          flex-direction: column;
-          background: linear-gradient(
-            135deg,
-            #ff6b6b 0%,
-            #ffd93d 25%,
-            #6bcf7f 50%,
-            #4d96ff 75%,
-            #a78bfa 100%
-          );
-          width: 100%;
-          text-align: center;
-          transition: left 0.3s;
-          padding: 2rem 0;
-        }
-
-        .nav-links.active {
-          left: 0;
-        }
-
-        .menu-toggle {
-          display: block;
-        }
-
-        .hero h1 {
-          font-size: 2rem;
-        }
-
-        .hero p {
-          font-size: 1rem;
-        }
-
-        h2 {
-          font-size: 2rem;
-        }
-
-        .vm-container,
-        .video-grid,
-        .module-grid {
-          grid-template-columns: 1fr;
-        }
-      }
-    </style>
+    <title>Smart Digi Kids - Belajar Menyenangkan!</title>
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
     <!-- Header -->
     <header>
       <nav>
-        <a href="#" class="logo">🚀 EduTech</a>
+        <a href="#" class="logo">Smart Digi Kids</a>
         <ul class="nav-links" id="navLinks">
           <li><a href="#home">🏠 Beranda</a></li>
-          <li><a href="#home">👥 Our Team</a></li>
-          <li><a href="#vision">🎯 Visi & Misi</a></li>
-          <li><a href="#videos">🎬 Video Edukasi</a></li>
-          <li><a href="#modules">📚 Modul</a></li>
+          <li><a href="#vision">✨ Visi & Misi</a></li>
+          <li><a href="#team">👥 Tim Kami</a></li>
+          <li><a href="#gallery">🖼️ Galeri</a></li>
+          <li><a href="#videos">🎬 Video</a></li>
           <li><a href="#contact">📞 Kontak</a></li>
         </ul>
         <button class="menu-toggle" id="menuToggle">☰</button>
@@ -520,145 +25,281 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-      <h1>Transformasi Digital untuk Pendidikan Masa Depan</h1>
-      <p>
-        Platform pembelajaran inovatif dengan teknologi terkini untuk
-        meningkatkan kualitas pendidikan Indonesia
-      </p>
-      <button class="cta-button">Mulai Belajar Sekarang</button>
-    </section>
+      <span class="deco-stars star-1">⭐</span>
+      <span class="deco-stars star-2">🌟</span>
+      <span class="deco-stars star-3">✨</span>
+      <span class="deco-stars star-4">💫</span>
 
-    <!-- Vision & Mission Section -->
-    <section class="vision-mission" id="vision">
-      <h2>Visi & Misi Kami</h2>
-      <div class="vm-container">
-        <div class="vm-card">
-          <h3>👁️ Visi</h3>
-          <p>
-            Menjadi platform pendidikan digital terdepan di Indonesia yang
-            memberdayakan setiap individu untuk mencapai potensi maksimal mereka
-            melalui akses pembelajaran berkualitas tinggi yang mudah dijangkau
-            kapan saja dan dimana saja.
-          </p>
-        </div>
-        <div class="vm-card">
-          <h3>🎯 Misi</h3>
-          <p>
-            Menyediakan konten edukasi berkualitas tinggi dan terkini yang
-            relevan dengan kebutuhan industri. Mengembangkan platform yang
-            user-friendly dan accessible untuk semua kalangan. Membangun
-            komunitas pembelajar yang aktif dan kolaboratif. Mendorong inovasi
-            dalam metode pembelajaran digital.
-          </p>
+      <div class="hero-content">
+        <h1>SMART DIGIKIDZ</h1>
+        <p>Cerdas Digital, Ceria Belajar</p>
+        <div class="hero-buttons">
+          <button
+            class="btn btn-secondary"
+            onclick="document.getElementById('videos').scrollIntoView({behavior: 'smooth'})"
+          >
+            Mulai Belajar
+          </button>
         </div>
       </div>
     </section>
 
+    <!-- Team Section -->
+    <section class="team" id="team">
+      <div class="section-header">
+        <h2>
+          Tim Kami
+          <img
+            style="height: 150px; width: 150px"
+            src="https://ik.imagekit.io/uc4newjdq/jokian/1.%20OurTeam.png?updatedAt=1761895405796"
+          />
+        </h2>
+      </div>
+      <div class="team-grid">
+        <div class="team-card">
+          <img
+            src="https://ik.imagekit.io/uc4newjdq/jokian/Risma%20Kahpiah.png?updatedAt=1761984306417"
+            alt="Guru 1"
+            class="team-photo"
+          />
+          <h3 class="name-team">Risma Kahpiah</h3>
+        </div>
+        <div class="team-card">
+          <img
+            src="https://ik.imagekit.io/uc4newjdq/jokian/Atalla%20Bima%20Sanjaya.png?updatedAt=1761984306394"
+            alt="Guru 1"
+            class="team-photo"
+          />
+          <h3 class="name-team">Atalla Bima Sanjaya</h3>
+        </div>
+        <div class="team-card">
+          <img
+            src="https://ik.imagekit.io/uc4newjdq/jokian/Isnawati%20Kartika%20N.png?updatedAt=1761984306175"
+            alt="Guru 1"
+            class="team-photo"
+          />
+          <h3 class="name-team">Isnawati Kartika Nurbalqis</h3>
+        </div>
+        <div class="team-card">
+          <img
+            src="https://ik.imagekit.io/uc4newjdq/jokian/Nayla%20Safinatun%20N.png?updatedAt=1761984306031"
+            alt="Guru 1"
+            class="team-photo"
+          />
+          <h3 class="name-team">Nayla</h3>
+        </div>
+        <div class="team-card">
+          <img
+            src="https://ik.imagekit.io/uc4newjdq/jokian/Astri.png?updatedAt=1761984305984"
+            alt="Guru 1"
+            class="team-photo"
+          />
+          <h3 class="name-team">Astri</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visi - Misi Section -->
+    <section class="vision-mission" id="vision">
+      <h2>Visi Dan Misi Kami</h2>
+      <div class="vm-container">
+        <div class="vm-card" style="background-color: #90aef1">
+          <div style="display: flex; align-items: center; gap: 10px">
+            <img
+              style="width: 150px; height: 150px"
+              src="https://ik.imagekit.io/uc4newjdq/jokian/2.%20Visi.png?updatedAt=1761895405135"
+            />
+            <h3>Visi</h3>
+          </div>
+          <p>
+            Menumbuhkan kecerdasan digital anak sejak dini melalui media
+            pembelajaran yang fun, interaktif, dan edukatif.
+          </p>
+        </div>
+        <div class="vm-card" style="background-color: #153059">
+          <div style="display: flex; align-items: center; gap: 10px">
+            <img
+              style="width: 150px; height: 150px"
+              src="   https://ik.imagekit.io/uc4newjdq/jokian/3.%20Misi.png?updatedAt=1761895405683"
+            />
+            <h3>Misi</h3>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 5px">
+            <p>
+              1.Mengembangkan media pembelajaran digital yang interaktif dan
+              ramah anak sesuai karakteristik perkembangan usia dini (melalui
+              gambar, warna, animasi, dan permainan edukatif).
+            </p>
+            <p>
+              2.Mendorong anak belajar sambil bermain agar proses belajar terasa
+              menyenangkan dan tidak membebani perkembangan emosi anak.
+            </p>
+            <p>
+              3.Meningkatkan keterlibatan orang tua dan guru PAUD dalam proses
+              pembelajaran digital melalui panduan penggunaan dan aktivitas
+              pendampingan anak di rumah.
+            </p>
+            <p>
+              4.Menjadi wadah inovasi pendidikan anak usia dini berbasis
+              teknologi yang tetap mengedepankan aspek karakter, sosial, dan
+              kreativitas anak.
+            </p>
+            <p>
+              5.Mendukung transformasi digital di lembaga PAUD agar pembelajaran
+              lebih modern, menarik, dan relevan dengan perkembangan zaman.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- Video Section -->
-    <section id="videos">
-      <h2>Video Edukasi Terpilih</h2>
+    <section class="videos" id="videos">
+      <div class="section-header">
+        <h2>Video Edukasi</h2>
+        <img
+          style="width: 150px; height: 150px"
+          src="https://ik.imagekit.io/uc4newjdq/jokian/4.%20Vidio%20Edukasi.png?updatedAt=1761895406641"
+        />
+      </div>
       <div class="video-grid">
-        <div class="video-card">
+        <div
+          class="video-card"
+          onclick="window.open('YOUR_YOUTUBE_LINK_1_HERE', '_blank')"
+        >
           <div class="video-thumbnail">
+            <img src="YOUR_IMAGEKIT_VIDEO_THUMB_1_URL_HERE" alt="Video 1" />
             <div class="play-button"></div>
           </div>
           <div class="video-info">
-            <h3>Pengenalan Pemrograman Python</h3>
+            <h3>🐍 Pengenalan Pemrograman Python</h3>
             <p>
-              Pelajari dasar-dasar Python dari nol hingga membuat aplikasi
-              pertama Anda
+              Belajar coding dengan cara yang menyenangkan dan mudah dipahami
+              untuk pemula
             </p>
           </div>
         </div>
-        <div class="video-card">
+        <div
+          class="video-card"
+          onclick="window.open('YOUR_YOUTUBE_LINK_2_HERE', '_blank')"
+        >
           <div class="video-thumbnail">
+            <img src="YOUR_IMAGEKIT_VIDEO_THUMB_2_URL_HERE" alt="Video 2" />
             <div class="play-button"></div>
           </div>
           <div class="video-info">
-            <h3>Web Development Modern</h3>
-            <p>
-              Kuasai HTML, CSS, dan JavaScript untuk membangun website
-              interaktif
-            </p>
+            <h3>🌐 Web Development Modern</h3>
+            <p>Membuat website keren dengan HTML, CSS, dan JavaScript</p>
           </div>
         </div>
-        <div class="video-card">
+        <div
+          class="video-card"
+          onclick="window.open('YOUR_YOUTUBE_LINK_3_HERE', '_blank')"
+        >
           <div class="video-thumbnail">
+            <img src="YOUR_IMAGEKIT_VIDEO_THUMB_3_URL_HERE" alt="Video 3" />
             <div class="play-button"></div>
           </div>
           <div class="video-info">
-            <h3>Digital Marketing Strategy</h3>
-            <p>Strategi pemasaran digital yang efektif untuk bisnis Anda</p>
+            <h3>📱 Digital Marketing Strategy</h3>
+            <p>Strategi pemasaran digital yang efektif dan mudah diterapkan</p>
           </div>
         </div>
-        <div class="video-card">
+        <div
+          class="video-card"
+          onclick="window.open('YOUR_YOUTUBE_LINK_4_HERE', '_blank')"
+        >
           <div class="video-thumbnail">
+            <img src="YOUR_IMAGEKIT_VIDEO_THUMB_4_URL_HERE" alt="Video 4" />
             <div class="play-button"></div>
           </div>
           <div class="video-info">
-            <h3>Data Science Fundamentals</h3>
-            <p>Analisis data dan machine learning untuk pemula</p>
+            <h3>📊 Data Science Fundamentals</h3>
+            <p>Belajar analisis data dan machine learning untuk pemula</p>
           </div>
         </div>
-        <div class="video-card">
+        <div
+          class="video-card"
+          onclick="window.open('YOUR_YOUTUBE_LINK_5_HERE', '_blank')"
+        >
           <div class="video-thumbnail">
+            <img src="YOUR_IMAGEKIT_VIDEO_THUMB_5_URL_HERE" alt="Video 5" />
             <div class="play-button"></div>
           </div>
           <div class="video-info">
-            <h3>UI/UX Design Principles</h3>
+            <h3>🎨 UI/UX Design Principles</h3>
             <p>Prinsip desain antarmuka yang user-friendly dan menarik</p>
           </div>
         </div>
-        <div class="video-card">
+        <div
+          class="video-card"
+          onclick="window.open('YOUR_YOUTUBE_LINK_6_HERE', '_blank')"
+        >
           <div class="video-thumbnail">
+            <img src="YOUR_IMAGEKIT_VIDEO_THUMB_6_URL_HERE" alt="Video 6" />
             <div class="play-button"></div>
           </div>
           <div class="video-info">
-            <h3>Mobile App Development</h3>
+            <h3>📱 Mobile App Development</h3>
             <p>Bangun aplikasi mobile dengan React Native</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Modules Section -->
-    <section class="modules" id="modules">
-      <h2>Modul Pembelajaran</h2>
-      <div class="module-grid">
-        <div class="module-card">
-          <div class="module-icon">💻</div>
-          <h3>Web Development</h3>
-          <p>
-            Pelajari HTML, CSS, JavaScript, dan framework modern seperti React
-            dan Vue.js
-          </p>
-          <span class="module-badge">12 Pelajaran</span>
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+      <div class="section-header">
+        <h2>Modul</h2>
+        <img
+          style="width: 150px; height: 150px"
+          src="https://ik.imagekit.io/uc4newjdq/jokian/5.%20Modul%20(untuk%20dibagian%20judul).png?updatedAt=1761895405208"
+        />
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="YOUR_IMAGEKIT_GALLERY_1_URL_HERE" alt="Kegiatan 1" />
+          <div class="gallery-caption">🖥️ Belajar Coding</div>
         </div>
-        <div class="module-card">
-          <div class="module-icon">📱</div>
-          <h3>Mobile Development</h3>
-          <p>
-            Bangun aplikasi mobile native dan cross-platform dengan Flutter dan
-            React Native
-          </p>
-          <span class="module-badge">15 Pelajaran</span>
+        <div class="gallery-item">
+          <img src="YOUR_IMAGEKIT_GALLERY_2_URL_HERE" alt="Kegiatan 2" />
+          <div class="gallery-caption">🎨 Workshop Kreatif</div>
         </div>
-        <div class="module-card">
-          <div class="module-icon">🤖</div>
-          <h3>Artificial Intelligence</h3>
-          <p>
-            Eksplorasi machine learning, deep learning, dan aplikasi AI dalam
-            kehidupan nyata
-          </p>
-          <span class="module-badge">20 Pelajaran</span>
+        <div class="gallery-item">
+          <img src="YOUR_IMAGEKIT_GALLERY_3_URL_HERE" alt="Kegiatan 3" />
+          <div class="gallery-caption">🔬 Eksperimen Sains</div>
         </div>
       </div>
     </section>
 
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <h2>Siap Memulai Petualangan Belajar? 🚀</h2>
+      <p>
+        Bergabunglah bersama ribuan anak-anak yang sudah belajar dengan cara
+        menyenangkan!
+      </p>
+      <button
+        class="btn-white"
+        onclick="alert('Terima kasih! Tim kami akan segera menghubungi Anda.')"
+      >
+        Daftar Sekarang! ✨
+      </button>
+    </section>
+
     <!-- Footer -->
     <footer id="contact">
-      <p>&copy; 2025 EduTech Digital. Semua hak dilindungi.</p>
-      <p>Email: info@edutech.com | Phone: +62 812-3456-7890</p>
+      <p>🌈 <strong>Smart Digi Kids</strong> - Belajar Jadi Lebih Seru!</p>
+      <p>📧 Email: info@smartdigikids.com | 📞 Phone: +62 812-3456-7890</p>
+      <p>📍 Alamat: Jl. Pendidikan No. 123, Jakarta, Indonesia</p>
+      <div class="footer-social">
+        <span>📘</span>
+        <span>📷</span>
+        <span>🐦</span>
+        <span>▶️</span>
+      </div>
+      <p style="margin-top: 1.5rem; opacity: 0.8">
+        &copy; 2025 Smart Digi Kids. Semua hak dilindungi.
+      </p>
     </footer>
 
     <script>
@@ -685,32 +326,26 @@
         });
       });
 
-      // Video play simulation
-      document.querySelectorAll(".play-button").forEach((button) => {
-        button.addEventListener("click", function () {
-          alert(
-            "Video akan diputar. Integrasi dengan platform video seperti YouTube atau Vimeo dapat ditambahkan."
-          );
-        });
-      });
+      // Add scroll animation
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -100px 0px",
+      };
 
-      // Module card click
-      document.querySelectorAll(".module-card").forEach((card) => {
-        card.addEventListener("click", function () {
-          const title = this.querySelector("h3").textContent;
-          alert(
-            `Modul "${title}" akan segera dibuka. Integrasi dengan sistem LMS dapat ditambahkan.`
-          );
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.animation = "fadeInUp 0.6s ease forwards";
+          }
         });
-      });
+      }, observerOptions);
 
-      // CTA Button
       document
-        .querySelector(".cta-button")
-        .addEventListener("click", function () {
-          document.getElementById("modules").scrollIntoView({
-            behavior: "smooth",
-          });
+        .querySelectorAll(
+          ".feature-card, .gallery-item, .team-card, .video-card"
+        )
+        .forEach((el) => {
+          observer.observe(el);
         });
     </script>
   </body>
