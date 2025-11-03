@@ -14,7 +14,7 @@ body {
 
 /* Header & Navigation */
 header {
-  background: linear-gradient(135deg, #f3f3f6 10%, #365b8a 40%, #122e57 100%);
+  background: linear-gradient(135deg, #365b8a 40%, #122e57 100%);
 
   color: white;
   padding: 0.5rem 0;
@@ -38,7 +38,7 @@ nav {
   font-size: 2.2rem;
   font-weight: bold;
   text-decoration: none;
-  background: linear-gradient(135deg, #ff6b9d, #122e57);
+  background: white;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -641,9 +641,12 @@ footer p {
   .nav-links.active {
     left: 0;
   }
-
+  .nav-links a {
+    color: #333;
+  }
   .menu-toggle {
     display: block;
+    color: white;
   }
 
   .hero h1 {
