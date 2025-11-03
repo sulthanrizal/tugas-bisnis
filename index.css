@@ -473,7 +473,9 @@ a {
 
 /* Video Section */
 .videos {
-  background: #122e57;
+  width: 100%;
+  height: auto;
+  background: url("https://ik.imagekit.io/uc4newjdq/jokian/WhatsApp%20Image%202025-11-01%20at%2021.55.44.jpeg?updatedAt=1762140477183");
 }
 
 .video-grid {
