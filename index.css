@@ -1,3 +1,4 @@
+/* <link rel="stylesheet" href="index.css" /> */
 * {
   margin: 0;
   padding: 0;
@@ -13,8 +14,9 @@ body {
 
 /* Header & Navigation */
 header {
-  background: linear-gradient(135deg, #f3f3f6, #122e57);
-  color: #333;
+  background: linear-gradient(135deg, #f3f3f6 10%, #365b8a 40%, #122e57 100%);
+
+  color: white;
   padding: 0.5rem 0;
   position: fixed;
   width: 100%;
@@ -36,7 +38,7 @@ nav {
   font-size: 2.2rem;
   font-weight: bold;
   text-decoration: none;
-  background: linear-gradient(135deg, #ff6b9d, #c06dff, #fec163, #68d391);
+  background: linear-gradient(135deg, #ff6b9d, #122e57);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -49,7 +51,7 @@ nav {
 }
 
 .nav-links a {
-  color: #333;
+  color: white;
   text-decoration: none;
   transition: all 0.3s;
   font-weight: 600;
@@ -73,10 +75,11 @@ nav {
 
 /* Hero Section */
 .hero {
-  background: url("https://ik.imagekit.io/uc4newjdq/jokian/0.%20Latar%20awal.png?updatedAt=1761895495965");
-  padding: 180px 0 100px;
+  background: url("https://ik.imagekit.io/uc4newjdq/jokian/0.%20Latar%20awal.png?updatedAt=1761895495965")
+    no-repeat center center;
   background-size: cover;
-  height: 90vh;
+  background-position: center top; /* bisa coba center center atau top center */
+  min-height: 90vh;
   width: 100%;
   text-align: center;
   position: relative;
@@ -250,7 +253,7 @@ nav {
 /* Section Styles */
 section {
   width: 100%;
-  padding: 100px 0;
+  padding: 50px 0;
   position: relative;
 }
 a {
@@ -304,6 +307,7 @@ a {
 .vm-card {
   display: flex;
   align-items: center;
+
   /* justify-content: center; */
   gap: 30px;
   padding: 1.5rem;
@@ -322,7 +326,7 @@ a {
 .vm-card h3 {
   font-size: 1.8rem;
   margin-bottom: 1rem;
-  color: white;
+  color: #ff6b9d;
 }
 
 .vm-card p {
@@ -342,12 +346,13 @@ a {
 
 /* Gallery Section */
 .gallery {
-  background: white;
+  background: #708e26;
 }
 
 .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 2rem;
   max-width: 1400px;
   margin: 0 auto;
@@ -355,7 +360,14 @@ a {
 }
 
 .gallery-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border-radius: 25px;
+  height: 350px;
+  width: 350px;
+  background-color: #ffde59;
+  padding: 1rem;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   transition: all 0.4s;
@@ -364,12 +376,10 @@ a {
 }
 
 .gallery-item::after {
-  content: "🎨";
   position: absolute;
   top: 15px;
   right: 15px;
   font-size: 2rem;
-  background: white;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -386,23 +396,26 @@ a {
 
 .gallery-item:hover {
   transform: scale(1.05) rotate(-2deg);
-  box-shadow: 0 20px 50px rgba(192, 109, 255, 0.3);
+  box-shadow: 0 20px 50px #ff6b9d;
 }
 
 .gallery-item img {
-  width: 100%;
-  height: 300px;
+  width: 170px;
+  height: 220px;
   object-fit: cover;
   display: block;
 }
 
 .gallery-caption {
-  padding: 1.5rem;
-  background: linear-gradient(135deg, #ffe5ec, #fff4e6);
+  padding: 0px 0.5rem;
   text-align: center;
   font-weight: bold;
   color: #ff6b9d;
-  font-size: 1.2rem;
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
 /* Team Section */
@@ -549,76 +562,6 @@ a {
   color: #666;
   line-height: 1.6;
 }
-
-/* CTA Section */
-.cta-section {
-  background: linear-gradient(135deg, #ff6b9d 0%, #c06dff 50%, #fec163 100%);
-  color: white;
-  text-align: center;
-  padding: 100px 3rem;
-  position: relative;
-  overflow: hidden;
-}
-
-.cta-section::before,
-.cta-section::after {
-  content: "⭐";
-  position: absolute;
-  font-size: 5rem;
-  opacity: 0.2;
-  animation: spin 10s linear infinite;
-}
-
-.cta-section::before {
-  top: 20%;
-  left: 10%;
-}
-
-.cta-section::after {
-  bottom: 20%;
-  right: 10%;
-  animation-direction: reverse;
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.cta-section h2 {
-  font-size: 3.5rem;
-  margin-bottom: 1.5rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.cta-section p {
-  font-size: 1.5rem;
-  margin-bottom: 2.5rem;
-  opacity: 0.95;
-}
-
-.btn-white {
-  background: white;
-  color: #ff6b9d;
-  padding: 1.2rem 3rem;
-  border: none;
-  border-radius: 50px;
-  font-size: 1.3rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-.btn-white:hover {
-  transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-}
-
 /* Footer */
 footer {
   background: #2d3748;
@@ -661,7 +604,7 @@ footer p {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 845px) {
   .vision-mission {
     padding: 3rem 1.5rem;
   }
@@ -683,7 +626,7 @@ footer p {
   .nav-links {
     position: fixed;
     left: -100%;
-    top: 80px;
+    top: 50px;
     flex-direction: column;
     background: white;
     width: 100%;
@@ -728,5 +671,160 @@ footer p {
 
   nav {
     padding: 0 1.5rem;
+  }
+}
+/* Responsive - Tablet */
+@media (max-width: 1200px) {
+  nav {
+    padding: 0 2rem;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  .nav-links {
+    gap: 1.5rem;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
+  }
+
+  .hero {
+    padding: 150px 0 80px;
+    height: 80vh;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero p {
+    font-size: 1.3rem;
+  }
+
+  .btn {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    width: 250px;
+  }
+
+  .section-header h2 {
+    font-size: 3rem;
+  }
+
+  .section-header img {
+    width: 120px !important;
+    height: 120px !important;
+  }
+
+  .vision-mission {
+    padding: 3rem 5rem;
+  }
+
+  .vision-mission h2 {
+    font-size: 3rem;
+  }
+
+  .vm-card h3 {
+    font-size: 1.6rem;
+  }
+
+  .vm-card img {
+    width: 120px !important;
+    height: 120px !important;
+  }
+
+  .video-grid {
+    padding: 0 5rem;
+    gap: 2rem;
+  }
+
+  .team-grid {
+    gap: 2rem;
+  }
+
+  .team-photo {
+    height: 250px;
+  }
+
+  .name-team {
+    width: 250px;
+    font-size: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .gallery-grid {
+    padding: 0 2rem;
+  }
+}
+/* Responsive - Small Mobile */
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .btn {
+    font-size: 0.95rem;
+    padding: 0.9rem 1.8rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.7rem;
+  }
+
+  .section-header img {
+    width: 80px !important;
+    height: 80px !important;
+  }
+
+  .vision-mission h2 {
+    font-size: 1.7rem;
+  }
+
+  .vm-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .vm-card p {
+    font-size: 0.9rem;
+  }
+
+  .vm-card img {
+    width: 80px !important;
+    height: 80px !important;
+  }
+
+  .gallery-item img {
+    height: 200px;
+  }
+
+  .gallery-caption {
+    font-size: 1rem;
+  }
+
+  .team-photo {
+    height: 250px;
+  }
+
+  .name-team {
+    font-size: 1.2rem;
+  }
+
+  .video-info {
+    padding: 1.5rem;
+  }
+
+  .video-info h3 {
+    font-size: 1.2rem;
   }
 }
