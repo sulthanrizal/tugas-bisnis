@@ -839,6 +839,7 @@ footer p {
       cursor: pointer;
       margin-top: 10px;
       background-color: white;
+      border-radius: 10px;
       color: #122e57;
     }
 
