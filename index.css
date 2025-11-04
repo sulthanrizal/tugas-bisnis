@@ -901,7 +901,9 @@ footer p {
   .video-info {
     padding: 1.5rem;
   }
-
+  .video-grid {
+    padding: 0 5rem !important;
+  }
   .video-info h3 {
     font-size: 1.2rem;
   }
