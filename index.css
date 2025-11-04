@@ -572,7 +572,7 @@ a {
 }
 /* Footer */
 footer {
-  background: #2d3748;
+  background: #122e57;
   color: white;
   text-align: center;
   padding: 3rem 2rem;
@@ -655,7 +655,9 @@ footer p {
   #toggle-mission {
     display: none;
   }
-
+  .mission-content {
+    text-align: justify;
+  }
   #toggle-mission:checked ~ .mission-content {
     max-height: 1000px; /* buka semua teks */
   }
