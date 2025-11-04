@@ -607,6 +607,60 @@ footer p {
 
 /* Responsive */
 @media (max-width: 845px) {
+  .mission-text {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .mission-content {
+    max-height: 120px; /* tampil sebagian dulu */
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    position: relative;
+  }
+
+  /* Gradasi di bawah agar teks terlihat terpotong */
+  .mission-content::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+  }
+
+  /* Tombol read more */
+  .read-more-btn {
+    display: block;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    background-color: white;
+    border-radius: 10px;
+  }
+
+  .read-more-btn::after {
+    content: "Read more...";
+  }
+
+  /* Checkbox toggle untuk buka teks */
+  #toggle-mission {
+    display: none;
+  }
+
+  #toggle-mission:checked ~ .mission-content {
+    max-height: 1000px; /* buka semua teks */
+  }
+
+  #toggle-mission:checked ~ .mission-content::after {
+    display: none;
+  }
+
+  #toggle-mission:checked ~ .read-more-btn::after {
+    content: "Show less";
+  }
   .vm-card {
     flex-direction: column;
   }
@@ -807,63 +861,6 @@ footer p {
     font-size: 0.9rem;
   }
   /* Efek Read More hanya aktif di layar kecil */
-  @media (max-width: 480px) {
-    .mission-text {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .mission-content {
-      max-height: 120px; /* tampil sebagian dulu */
-      overflow: hidden;
-      transition: max-height 0.5s ease;
-      position: relative;
-    }
-
-    /* Gradasi di bawah agar teks terlihat terpotong */
-    .mission-content::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 40px;
-    }
-
-    /* Tombol read more */
-    .read-more-btn {
-      display: block;
-      text-align: center;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-      margin-top: 10px;
-      background-color: white;
-      border-radius: 10px;
-      color: #122e57;
-    }
-
-    .read-more-btn::after {
-      content: "Read more...";
-    }
-
-    /* Checkbox toggle untuk buka teks */
-    #toggle-mission {
-      display: none;
-    }
-
-    #toggle-mission:checked ~ .mission-content {
-      max-height: 1000px; /* buka semua teks */
-    }
-
-    #toggle-mission:checked ~ .mission-content::after {
-      display: none;
-    }
-
-    #toggle-mission:checked ~ .read-more-btn::after {
-      content: "Show less";
-    }
-  }
 
   .vm-card img {
     width: 80px !important;
