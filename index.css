@@ -1,4 +1,10 @@
 /* <link rel="stylesheet" href="index.css" /> */
+
+* {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
 * {
   margin: 0;
   padding: 0;
