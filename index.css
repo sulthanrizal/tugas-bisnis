@@ -823,6 +823,9 @@ footer p {
 }
 /* Responsive - Small Mobile */
 @media (max-width: 480px) {
+  .vision-mission {
+    padding: 3rem 1rem;
+  }
   .logo {
     font-size: 1.3rem;
   }
