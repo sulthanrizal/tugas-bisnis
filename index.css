@@ -823,7 +823,8 @@ footer p {
 }
 /* Responsive - Small Mobile */
 @media (max-width: 480px) {
-  .vision-mission {
+  .vision-mission,
+  .video-grid {
     padding: 3rem 1rem;
   }
   .logo {
