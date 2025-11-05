@@ -87,7 +87,7 @@ nav {
     no-repeat center center;
   background-size: cover;
   background-position: center top;
-  height: 90vh;
+  height: 100vh;
   width: 100%;
   text-align: center;
   position: relative;
@@ -436,7 +436,10 @@ a {
 .videos {
   width: 100%;
   height: auto;
-  background: url("https://ik.imagekit.io/uc4newjdq/jokian/WhatsApp%20Image%202025-11-01%20at%2021.55.44.jpeg?updatedAt=1762140477183");
+  background: url("https://ik.imagekit.io/uc4newjdq/jokian/WhatsApp%20Image%202025-11-01%20at%2021.55.44.jpeg?updatedAt=1762140477183")
+    no-repeat;
+  background-size: contain;
+  background-position: center top;
 }
 
 .video-grid {
@@ -568,10 +571,6 @@ footer p {
 
 /* Responsive */
 @media (max-width: 845px) {
-  .hero {
-    height: 100vh;
-    background: url("https://ik.imagekit.io/uc4newjdq/jokian/20251104_222352_0000.jpg?updatedAt=1762271924200");
-  }
   .mission-text {
     position: relative;
     overflow: hidden;
@@ -712,6 +711,13 @@ footer p {
   nav {
     padding: 0 1.5rem;
   }
+  .videos {
+    background: url("https://ik.imagekit.io/uc4newjdq/jokian/20251104_222352_0001.jpg?updatedAt=1762271924172");
+    background-repeat: no-repeat repeat;
+    height: 100%;
+    background-size: contain;
+    /* background-position: center top; */
+  }
 }
 /* Responsive - Tablet */
 @media (max-width: 1200px) {
@@ -786,6 +792,12 @@ footer p {
   }
 }
 @media (max-width: 630px) {
+  .hero {
+    background: url("https://ik.imagekit.io/uc4newjdq/jokian/20251104_222352_0000.jpg?updatedAt=1762271924200");
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* height: 90vh; */
+  }
   h2 {
     font-size: 2rem !important;
   }
@@ -795,6 +807,9 @@ footer p {
 }
 /* Responsive - Small Mobile */
 @media (max-width: 480px) {
+  .hero {
+    background-size: cover;
+  }
   .vision-mission,
   .video-grid {
     padding: 3rem 1rem;
@@ -874,10 +889,9 @@ footer p {
 
 /* Judul dan ikon */
 .section-header h2 {
-  font-size: 28px;
+  font-size: 3rem;
   color: #ff69b4;
   display: flex;
-  flex-direction: column;
   align-items: center;
   gap: 10px;
   margin-bottom: 40px;
@@ -935,7 +949,14 @@ footer p {
 /* 🧩 Tablet - tampil 2 kolom */
 @media (min-width: 640px) {
   .team-grid {
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    padding: 0px;
+  }
+  .team-card {
+    max-width: 325px;
   }
 }
 
