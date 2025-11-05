@@ -5,6 +5,9 @@
   font-optical-sizing: auto;
   font-style: normal;
 }
+h2 {
+  font-family: "Bubblegum Sans", sans-serif !important;
+}
 * {
   margin: 0;
   padding: 0;
@@ -147,6 +150,7 @@ nav {
 }
 
 .hero h1 {
+  font-family: "Pacifico", cursive;
   font-size: 4rem;
   margin-bottom: 1.5rem;
   color: #ff6b9d;
