@@ -608,7 +608,9 @@ footer p {
   .read-more-btn::after {
     content: "Read more...";
   }
-
+  .nav-links {
+    gap: 0;
+  }
   /* Checkbox toggle untuk buka teks */
   #toggle-mission {
     display: none;
