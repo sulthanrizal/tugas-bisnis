@@ -863,6 +863,9 @@ footer p {
   background-color: #ffeb3b; /* warna kuning cerah */
   padding: 60px 20px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Judul dan ikon */
@@ -886,6 +889,7 @@ footer p {
   display: grid;
   grid-template-columns: 1fr;
   gap: 30px;
+  width: auto;
   justify-items: center;
 }
 
@@ -934,7 +938,10 @@ footer p {
 /* 💻 Desktop - tampil 3 kolom */
 @media (min-width: 1024px) {
   .team-grid {
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
   }
 }
 .team-card {
